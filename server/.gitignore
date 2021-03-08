@@ -1,0 +1,33 @@
+# IntelliJ IDEA.
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse.
+.settings/
+.project
+.classpath
+*.launch
+
+# VSCode.
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# System files.
+.DS_Store
+Thumbs.db
+
+# Environment variables.
+.env
+
+# Dependencies.
+node_modules/
+
+# Mocks.
+mocks/*
+!mocks/.gitkeep

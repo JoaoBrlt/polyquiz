@@ -1,0 +1,1172 @@
+{
+	"info": {
+		"_postman_id": "2721fa55-f720-4b7a-b839-1811e99ffcf8",
+		"name": "PolyQuiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Check status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/status",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quizzes",
+			"item": [
+				{
+					"name": "Questions",
+					"item": [
+						{
+							"name": "Answers",
+							"item": [
+								{
+									"name": "List the answers",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/quizzes/1/questions/1/answers",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"quizzes",
+												"1",
+												"questions",
+												"1",
+												"answers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create an answer",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"value\": \"Réponse 4\",\n\t\"isCorrect\": false,\n\t\"imageId\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/quizzes/2/questions/6/answers",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"quizzes",
+												"2",
+												"questions",
+												"6",
+												"answers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find an answer by id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/quizzes/1/questions/1/answers/",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"quizzes",
+												"1",
+												"questions",
+												"1",
+												"answers",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update an answer",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"value\": \"Réponse 22\",\n\t\"isCorrect\": false,\n\t\"imageId\": 2\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/quizzes/1/questions/1/answers/2",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"quizzes",
+												"1",
+												"questions",
+												"1",
+												"answers",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete an answer",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/quizzes/1/questions/1/answers/1",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"quizzes",
+												"1",
+												"questions",
+												"1",
+												"answers",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "List the questions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/quizzes/1/questions",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"quizzes",
+										"1",
+										"questions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a question",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"label\": \"Question 1\",\n\t\"imageId\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/quizzes/1/questions",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"quizzes",
+										"1",
+										"questions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find a question by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/quizzes/1/questions/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"quizzes",
+										"1",
+										"questions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a question",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"label\": \"Question 1\",\n\t\"imageId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/quizzes/1/questions/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"quizzes",
+										"1",
+										"questions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a question",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/quizzes/1/questions/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"quizzes",
+										"1",
+										"questions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List the quizzes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/quizzes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quizzes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a quiz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Quiz 1\",\n\t\"themeId\": 1,\n\t\"imageId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/quizzes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quizzes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a quiz by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/quizzes/5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quizzes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a quiz",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Quiz 1\",\n\t\"themeId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/quizzes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quizzes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a quiz",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/quizzes/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quizzes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Guests",
+			"item": [
+				{
+					"name": "Quizzes",
+					"item": [
+						{
+							"name": "Add a quiz to a guest",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/guests/10/quizzes/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"guests",
+										"10",
+										"quizzes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove a quiz from a guest",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/guests/1/quizzes/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"guests",
+										"1",
+										"quizzes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List the guests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/guests",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a guest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Jane\",\n\t\"lastName\": \"Doe\",\n\t\"accessiblity\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/guests/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guests",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a guest by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/guests/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guests",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a guest",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"John\",\n\t\"lastName\": \"Doe\",\n\t\"accessiblity\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/guests/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guests",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a guest",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/guests/10",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guests",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Themes",
+			"item": [
+				{
+					"name": "List the themes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/themes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"themes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a theme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Animaux\",\n\t\"imageId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/themes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"themes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a theme by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/themes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"themes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a theme",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Cinéma\",\n\t\"imageId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/themes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"themes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a theme",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/themes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"themes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "List the images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/images",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Lion\",\n\t\"path\": \"http://example.org/lion.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/images",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find an image by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/images/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an image",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Tigre\",\n\t\"path\": \"http://example.org/tigre.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/images/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an image",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/images/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Results",
+			"item": [
+				{
+					"name": "Questions Results",
+					"item": [
+						{
+							"name": "Answer Results",
+							"item": [
+								{
+									"name": "List the answers results",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": ""
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create an answer result",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/results/1/questions/1/answers/1",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"results",
+												"1",
+												"questions",
+												"1",
+												"answers",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete an answer result",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/results/1/questions/1/answers/1",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"results",
+												"1",
+												"questions",
+												"1",
+												"answers",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "List the questions results",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/results/1/questions",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"results",
+										"1",
+										"questions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a question result",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"wrongAnswers\": 2,\n\t\"skipped\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/results/1/questions/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"results",
+										"1",
+										"questions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find a question result by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/results/1/questions/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"results",
+										"1",
+										"questions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a question result by id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"skipped\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/results/1/questions/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"results",
+										"1",
+										"questions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a question by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/results/1/questions/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"results",
+										"1",
+										"questions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List  the results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/results",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"results"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a result",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guestId\": 1,\n\t\"quizId\": 2,\n\t\"timedOut\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/results",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"results"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a result by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/results/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"results",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a result",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"guestId\": 1,\n\t\"quizId\": 1,\n\t\"timedOut\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/results/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"results",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a result",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/results/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"results",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/test/lol",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"test",
+						"lol"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
