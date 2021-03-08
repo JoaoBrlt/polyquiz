@@ -1,0 +1,19 @@
+<section class="guest-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="title">Modifier un accueilli</h1>
+    </div>
+  </div>
+</section>
+
+<section class="guest-edit">
+  <div class="row">
+    <div class="col">
+      <app-guest-form
+        *ngIf="guest"
+        [guest]="guest"
+        (submitGuest)="editGuest($event)">
+      </app-guest-form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<div *ngIf="quiz">
+  <section class="question-header">
+    <div class="row">
+      <div class="col">
+        <h1 class="question-title">
+          Questions du quiz
+          <span class="text-primary">{{ quiz.name }}</span>
+        </h1>
+        <button
+          type="button"
+          (click)="createQuestion()"
+          class="btn btn-primary question-create">
+          <fa-icon [icon]="createIcon"></fa-icon>
+          Ajouter une question
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="question-list">
+    <div class="row row-cols-1" >
+      <div *ngFor="let question of quiz.questions; let index = index" class="col">
+        <app-question
+          [question]="question"
+          [index]="index"
+          (editQuestion)="editQuestion($event)"
+          (deleteQuestion)="deleteQuestion($event)">
+        </app-question>
+      </div>
+    </div>
+  </section>
+</div>

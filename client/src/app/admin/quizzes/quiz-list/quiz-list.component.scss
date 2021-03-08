@@ -1,0 +1,25 @@
+.quiz-header {
+  margin-bottom: 20px;
+
+  .quiz-title {
+    display: inline-block;
+    margin: 0 30px 0 0;
+  }
+
+  .quiz-create {
+    position: absolute;
+    top: 5px;
+
+    fa-icon {
+      margin-right: 5px;
+    }
+  }
+}
+
+.quiz-list {
+  margin-bottom: 0;
+}
+
+.quiz-pagination {
+  margin-bottom: 30px;
+}

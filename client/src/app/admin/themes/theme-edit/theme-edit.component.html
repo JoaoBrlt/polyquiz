@@ -1,0 +1,19 @@
+<section class="theme-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="title">Modifier un thème</h1>
+    </div>
+  </div>
+</section>
+
+<section class="theme-edit">
+  <div class="row">
+    <div class="col">
+      <app-theme-form
+        *ngIf="theme"
+        [theme]="theme"
+        (submitTheme)="editTheme($event)">
+      </app-theme-form>
+    </div>
+  </div>
+</section>

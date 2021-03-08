@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Suppression de question</h4>
+  <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>
+    <strong>
+      Êtes-vous certain(e) de vouloir supprimer la question
+      <span class="text-primary">{{ question.label }}</span> ?
+    </strong>
+  </p>
+  <p>
+    Toutes les informations associées à cette question seront supprimées.
+    De même, toutes les réponses associées à cette question seront supprimées.
+    <span class="text-danger">Cette opération est irréversible.</span>
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Annuler</button>
+  <button type="button" class="btn btn-primary" (click)="modal.close()">Confirmer</button>
+</div>

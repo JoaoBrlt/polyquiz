@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Suppression d'image</h4>
+  <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>
+    <strong>
+      Êtes-vous certain(e) de vouloir supprimer l'image
+      <span class="text-primary">{{ image.name }}</span> ?
+    </strong>
+  </p>
+  <p>
+    Toutes les informations associées à cette image seront supprimées.
+    De plus, toutes les ressources utilisant cette image seront modifiées.
+    <span class="text-danger">Cette opération est irréversible.</span>
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Annuler</button>
+  <button type="button" class="btn btn-primary" (click)="modal.close()">Confirmer</button>
+</div>

@@ -1,0 +1,18 @@
+<form [formGroup]="quizForm" (ngSubmit)="submit()" class="quiz-form">
+  <div *ngIf="getSelectedImage(quizForm)" class="form-group" >
+    <label>Prévisualisation</label>
+    <img src="{{ getSelectedImage(quizForm).path }}" class="image-preview"/>
+  </div>
+  <div class="form-group" >
+    <label for="name">Nom</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Nom"
+      [formControlName]="'name'"
+    />
+  </div>
+  <app-image-select [parentFormGroup]="quizForm"></app-image-select>
+  <button [disabled]="!quizForm.valid" type="submit" class="btn btn-primary quiz-submit">Valider</button>
+</form>

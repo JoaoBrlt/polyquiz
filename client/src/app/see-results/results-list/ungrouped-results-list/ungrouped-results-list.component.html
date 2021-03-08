@@ -1,0 +1,36 @@
+<section class="result-list">
+  <div class="row result-table">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr class="table-primary">
+            <th class="name" scope="col">Nom du quiz</th>
+            <th class="date" scope="col">
+              Date à laquelle il a été joué
+            </th>
+            <th class="completion" scope="col">Complétion</th>
+            <th class="successPercent" scope="col">Taux de réussite aux questions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+            *ngFor="let result of results; let i = index"
+            (click)="goToQuestionResults(result.id)"
+            title="Sélectionner"
+            class="table-secondary">
+            <td class="name" scope="row">{{ quizNames[i] }}</td>
+            <td class="date" scope="row">{{result.createdAt | date:'dd/MM/y à H:mm'}}</td>
+            <td class="completion" scope="row">
+              Il {{result.timedOut ? " n'a pas été " : "a été "}} complété
+              <fa-icon *ngIf="result.timedOut" [icon]="iconNo"></fa-icon>
+              <fa-icon *ngIf="!(result.timedOut)" [icon]="iconYes"></fa-icon>
+            </td>
+            <td class="successPercent" scope="row">{{getSuccessPercent(result)}}%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

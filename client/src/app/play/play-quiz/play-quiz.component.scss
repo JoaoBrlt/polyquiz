@@ -1,0 +1,65 @@
+@import '~bootswatch/dist/superhero/variables';
+
+.size {
+  font-size: 3.5rem!important;
+  font-weight: bold!important;
+}
+
+.contrast {
+  background: black!important;
+}
+
+.quiz {
+  font-size: 2rem;
+  background: $secondary;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+
+  .progress {
+    height: 30px;
+
+    .progress-bar {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+  .quiz-answer {
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 30px;
+    text-align: center;
+
+    .answer-image {
+      width: 100%;
+      height: 250px;
+      max-width: 400px;
+      object-fit: cover;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .quiz-ending {
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 30px;
+    text-align: center;
+
+    .restart-button {
+      font-size: inherit;
+      font-weight: inherit;
+      margin-top: 30px;
+    }
+  }
+}
+
+.btn-white {
+  border: none;
+  color: #000000;
+  background: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+
+  &:hover, &:active {
+    background: #BDC3C7;
+  }
+}

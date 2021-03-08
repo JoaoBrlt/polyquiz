@@ -1,0 +1,20 @@
+@import '~bootswatch/dist/superhero/variables';
+
+.card {
+  margin-bottom: 30px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    background: $primary;
+  }
+  .card-icon {
+    font-size: 4rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    margin: 5px 0;
+  }
+}

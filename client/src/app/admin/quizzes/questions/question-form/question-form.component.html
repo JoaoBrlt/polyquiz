@@ -1,0 +1,54 @@
+<form [formGroup]="questionForm" (ngSubmit)="submit()" class="question-form">
+  <div class="form-group" >
+    <label for="label">Question</label>
+    <input
+      type="text"
+      class="form-control"
+      id="label"
+      placeholder="Question"
+      [formControlName]="'label'"
+    />
+  </div>
+  <div *ngIf="getSelectedImage(questionForm)" class="form-group" >
+    <label>Prévisualisation</label>
+    <img src="{{ getSelectedImage(questionForm).path }}" class="image-preview"/>
+  </div>
+  <app-image-select [parentFormGroup]="questionForm"></app-image-select>
+  <hr/>
+  <div formArrayName="answers" class="row">
+    <div [formGroupName]="i" *ngFor="let i of [0, 1, 2, 3]" class="col-12 col-md-6">
+      <div class="form-group">
+        <label for="{{ 'value-' + i }}">Réponse {{ i + 1 }}</label>
+        <input
+          type="text"
+          class="form-control"
+          id="{{ 'value-' + i }}"
+          placeholder="{{ 'Réponse ' + (i + 1) }}"
+          formControlName="value"
+        />
+      </div>
+      <div *ngIf="getSelectedImage(answerForms[i])" class="form-group" >
+        <label>Prévisualisation</label>
+        <img src="{{ getSelectedImage(answerForms[i]).path }}" class="image-preview"/>
+      </div>
+      <app-image-select [parentFormGroup]="answerForms[i]"></app-image-select>
+      <div class="form-group">
+        <div class="custom-control custom-checkbox">
+          <input
+            type="checkbox"
+            id="{{ 'isCorrect-' + i }}"
+            class="custom-control-input"
+            formControlName="isCorrect"
+          />
+          <label class="custom-control-label" for="{{ 'isCorrect-' + i }}">La réponse {{ i + 1 }} est correcte.</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    type="submit"
+    [disabled]="!questionForm.valid"
+    class="btn btn-primary question-submit">
+    Valider
+  </button>
+</form>

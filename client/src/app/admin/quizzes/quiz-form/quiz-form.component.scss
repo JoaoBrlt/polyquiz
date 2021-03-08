@@ -1,0 +1,36 @@
+@import '~bootswatch/dist/superhero/variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootswatch/dist/superhero/bootswatch';
+
+.quiz-form {
+  .image-preview {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .form-group {
+    label {
+      font-size: 1.4rem;
+    }
+
+    input[type=text] {
+      font-size: 1.2rem;
+    }
+  }
+
+  .ng-valid  {
+    @extend .is-valid;
+  }
+
+  .ng-invalid.ng-touched  {
+    @extend .is-invalid;
+  }
+
+  .quiz-submit {
+    margin-top: 15px;
+    font-size: 1.4rem;
+  }
+}

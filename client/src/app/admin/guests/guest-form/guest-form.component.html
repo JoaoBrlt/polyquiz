@@ -1,0 +1,39 @@
+<form [formGroup]="guestForm" (ngSubmit)="submit()" class="guest-form">
+  <div class="form-group" >
+    <label for="firstName">Prénom</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      placeholder="Prénom"
+      formControlName="firstName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="lastName">Nom</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lastName"
+      placeholder="Nom"
+      formControlName="lastName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="accessibility">Profil d'accessibilité</label>
+    <select id="accessibility" formControlName="accessibility" class="form-control" >
+      <option
+        *ngFor="let accessibility of accessibilities"
+        [ngValue]="accessibility.value"
+      >
+        {{ accessibility.name }}
+      </option>
+    </select>
+  </div>
+  <button
+    type="submit"
+    [disabled]="!guestForm.valid"
+    class="btn btn-primary guest-submit">
+    Valider
+  </button>
+</form>

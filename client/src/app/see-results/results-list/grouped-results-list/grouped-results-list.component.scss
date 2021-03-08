@@ -1,0 +1,28 @@
+.result-list {
+  margin-bottom: 30px;
+
+  .table {
+    font-size: 1rem;
+    margin-bottom: 0;
+
+    thead {
+      .table-primary {
+        th {
+          height: 60px;
+          font-weight: 700;
+          border-bottom: none;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td, th {
+          height: 60px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

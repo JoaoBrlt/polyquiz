@@ -1,0 +1,24 @@
+<div (click)="select($event)" title="Sélectionner" class="card quiz-card">
+  <img *ngIf="image" src="{{ image.path }}" class="card-img-top" alt="{{ image.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ quiz.name }}</h5>
+    <button
+      *ngIf="editable"
+      type="button"
+      title="Modifier"
+      (click)="edit($event)"
+      class="btn btn-success quiz-button">
+      <fa-icon [icon]="editIcon"></fa-icon>
+      Modifier
+    </button>
+    <button
+      *ngIf="editable"
+      type="button"
+      title="Supprimer"
+      (click)="delete($event)"
+      class="btn btn-danger quiz-button">
+      <fa-icon [icon]="deleteIcon"></fa-icon>
+      Supprimer
+    </button>
+  </div>
+</div>

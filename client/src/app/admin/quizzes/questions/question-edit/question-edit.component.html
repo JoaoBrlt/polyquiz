@@ -1,0 +1,19 @@
+<section class="question-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="title">Modifier une question</h1>
+    </div>
+  </div>
+</section>
+
+<section class="question-edit">
+  <div class="row">
+    <div class="col">
+      <app-question-form
+        *ngIf="question"
+        [question]="question"
+        (submitQuestion)="editQuestion($event)">
+      </app-question-form>
+    </div>
+  </div>
+</section>

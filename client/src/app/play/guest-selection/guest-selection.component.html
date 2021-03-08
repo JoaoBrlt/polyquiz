@@ -1,0 +1,58 @@
+<section class="guest-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="guest-title">Sélectionner un accueilli</h1>
+    </div>
+  </div>
+</section>
+
+<section class="guest-list">
+  <div class="row guest-table">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr class="table-primary">
+            <th class="firstName" scope="col">Prénom</th>
+            <th class="lastName" scope="col">Nom</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+            *ngFor="let guest of getGuests()"
+            (click)="selectGuest(guest)"
+            title="Sélectionner"
+            class="table-secondary">
+            <td class="firstName" scope="row">{{ guest.firstName }}</td>
+            <td class="lastName" scope="row">{{ guest.lastName }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guest-pagination">
+  <div class="row justify-content-between">
+    <div class="col">
+      <ngb-pagination
+        [collectionSize]="collectionSize"
+        [(page)]="page"
+        [pageSize]="pageSize">
+        <ng-template ngbPaginationFirst>Première</ng-template>
+        <ng-template ngbPaginationLast>Dernière</ng-template>
+        <ng-template ngbPaginationPrevious>Précédente</ng-template>
+        <ng-template ngbPaginationNext>Suivante</ng-template>
+      </ngb-pagination>
+    </div>
+    <div class="col-3">
+      <select class="custom-select" [(ngModel)]="pageSize">
+        <option [ngValue]="5">5 accueillis par page</option>
+        <option [ngValue]="10">10 accueillis par page</option>
+        <option [ngValue]="15">15 accueillis par page</option>
+        <option [ngValue]="20">20 accueillis par page</option>
+      </select>
+    </div>
+  </div>
+</section>

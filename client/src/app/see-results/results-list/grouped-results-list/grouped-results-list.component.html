@@ -1,0 +1,28 @@
+<section class="result-list">
+  <div class="row result-table">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr class="table-primary">
+            <th class="name" scope="col">Nom du quiz</th>
+            <th class="completion" scope="col">Taux de complétion</th>
+            <th class="successPercent" scope="col">Taux de réussite moyen aux questions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+            *ngFor="let groupedResult of groupedResults"
+            class="table-secondary">
+            <td class="name" scope="row">{{ groupedResult.quizName }}</td>
+            <td class="completion" scope="row">
+              {{getAverageTimeOuts(groupedResult.results)}}%
+            </td>
+            <td class="successPercent" scope="row">{{getAverageSuccessPercent(groupedResult.results)}}%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+<section class="guest-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="guest-title">Accueillis</h1>
+      <button type="button" class="btn btn-primary guest-create" (click)="createGuest()">Ajouter un accueilli</button>
+    </div>
+  </div>
+</section>
+
+<section class="guest-list">
+  <div class="row guest-table">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+          <tr class="table-primary">
+            <th class="firstName" scope="col">Prénom</th>
+            <th class="lastName" scope="col">Nom</th>
+            <th class="accessibility" scope="col">Accessibilité</th>
+            <th class="actions" scope="col">Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let guest of getGuests()" class="table-secondary">
+            <td class="firstName" scope="row">{{ guest.firstName }}</td>
+            <td class="lastName" scope="row">{{ guest.lastName }}</td>
+            <td class="accessibility" scope="row">{{ getAccessibility(guest) }}</td>
+            <td class="actions" scope="row">
+              <button
+                type="button"
+                title="Modifier"
+                class="btn btn-success"
+                (click)="editGuest(guest)">
+                <fa-icon [icon]="editIcon"></fa-icon>
+                Modifier
+              </button>
+              <button
+                type="button"
+                title="Supprimer"
+                class="btn btn-danger"
+                (click)="deleteGuest(guest)">
+                <fa-icon [icon]="deleteIcon"></fa-icon>
+                Supprimer
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guest-pagination">
+  <div class="row justify-content-between">
+    <div class="col">
+        <ngb-pagination
+          [collectionSize]="collectionSize"
+          [(page)]="page"
+          [pageSize]="pageSize">
+          <ng-template ngbPaginationFirst>Première</ng-template>
+          <ng-template ngbPaginationLast>Dernière</ng-template>
+          <ng-template ngbPaginationPrevious>Précédente</ng-template>
+          <ng-template ngbPaginationNext>Suivante</ng-template>
+        </ngb-pagination>
+    </div>
+    <div class="col-3">
+        <select class="custom-select" [(ngModel)]="pageSize">
+          <option [ngValue]="5">5 accueillis par page</option>
+          <option [ngValue]="10">10 accueillis par page</option>
+          <option [ngValue]="15">15 accueillis par page</option>
+          <option [ngValue]="20">20 accueillis par page</option>
+        </select>
+    </div>
+  </div>
+</section>

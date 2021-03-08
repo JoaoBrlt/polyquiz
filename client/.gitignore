@@ -1,0 +1,49 @@
+# IntelliJ IDEA.
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse.
+.settings/
+.project
+.classpath
+*.launch
+
+# VSCode.
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# System files.
+.DS_Store
+Thumbs.db
+
+# Environment variables.  ²
+.env
+
+# Dependencies.
+node_modules/
+
+# Build.
+dist/
+tmp/
+out-tsc/
+bazel-out/
+
+# Profiling.
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# Miscellaneous.
+.sass-cache/
+connect.lock
+coverage/
+libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+typings/

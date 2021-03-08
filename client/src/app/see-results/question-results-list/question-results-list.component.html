@@ -1,0 +1,51 @@
+<section class="question-result-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="question-result-title">Voici les détails des résultats du quiz {{selectedQuiz.name}} joué par
+        {{guestName}} le {{selectedResult.createdAt | date:'dd/MM/y à H:mm'}}</h1>
+    </div>
+  </div>
+</section>
+
+<section class="question-result-list">
+  <div class="row question-result-table">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr class="table-primary">
+            <th class="label" scope="col">Label de la question</th>
+            <th class="skipped" scope="col">A-t'elle été sautée?</th>
+            <th class="answers" scope="col">Réponses sélectionnées</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let questionResult of selectedResult.questions" class="table-secondary">
+            <td class="label" scope="row">{{getQuestionNameById(questionResult.questionId)}}</td>
+            <td class="skipped" scope="row">
+              Elle {{questionResult.skipped ? "a" : "n'a pas"}} été sautée.
+            </td>
+            <td class="answers" scope="row">
+                <span *ngIf="questionResult.answers.length == 0">
+                Aucune réponse n'a été sélectionnée par l'accueilli
+              </span>
+              <span *ngIf="questionResult.answers.length == 1">
+                La réponse sélectionnée par l'accueilli est :
+                "{{getAnswerValueById(questionResult.questionId, questionResult.answers[0])}}"
+              </span>
+              <span *ngIf="questionResult.answers.length != 1 && questionResult.answers.length != 0">
+                Les réponses sélectionnées par l'accueilli sont :
+                <span *ngFor="let answerId of questionResult.answers">
+                  <br/>
+                  - {{getAnswerValueById(questionResult.questionId, answerId)}}
+                </span>
+              </span>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

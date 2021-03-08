@@ -1,0 +1,19 @@
+<section class="image-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="title">Modifier une image</h1>
+    </div>
+  </div>
+</section>
+
+<section class="image-edit">
+  <div class="row">
+    <div class="col">
+      <app-image-form
+        *ngIf="image"
+        [image]="image"
+        (submitImage)="editImage($event)">
+      </app-image-form>
+    </div>
+  </div>
+</section>

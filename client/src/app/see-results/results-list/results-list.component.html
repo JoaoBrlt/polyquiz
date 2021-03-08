@@ -1,0 +1,24 @@
+<section class="result-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="result-title">Cliquez sur un résultat pour en voir les détails</h1>
+      <button *ngIf="!grouped" type="button" class="btn btn-primary " (click)="groupByQuiz()">
+        <fa-icon [icon]="iconGroup"></fa-icon>
+        Voir les résultats groupés par quiz
+      </button>
+      <button *ngIf="grouped" type="button" class="btn btn-primary " (click)="unGroup()">
+        <fa-icon [icon]="iconUngroup"></fa-icon>
+        Voir les résultats non groupés
+      </button>
+    </div>
+  </div>
+</section>
+
+<app-ungrouped-results-list *ngIf="!grouped" [results]="results">
+
+</app-ungrouped-results-list>
+
+<app-grouped-results-list *ngIf="grouped" [results]="results">
+
+</app-grouped-results-list>
+

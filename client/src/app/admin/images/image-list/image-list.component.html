@@ -1,0 +1,47 @@
+<section class="image-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="image-title">Images</h1>
+      <button type="button" class="btn btn-primary image-create" (click)="createImage()">
+        <fa-icon [icon]="createIcon"></fa-icon>
+        Ajouter une image
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="image-list">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <div *ngFor="let image of getImages()" class="col">
+      <app-image
+        [image]="image"
+        (editImage)="editImage($event)"
+        (deleteImage)="deleteImage($event)">
+      </app-image>
+    </div>
+  </div>
+</section>
+
+<section class="image-pagination">
+  <div class="row justify-content-between">
+    <div class="col">
+      <ngb-pagination
+        [collectionSize]="collectionSize"
+        [(page)]="page"
+        [pageSize]="pageSize">
+        <ng-template ngbPaginationFirst>Première</ng-template>
+        <ng-template ngbPaginationLast>Dernière</ng-template>
+        <ng-template ngbPaginationPrevious>Précédente</ng-template>
+        <ng-template ngbPaginationNext>Suivante</ng-template>
+      </ngb-pagination>
+    </div>
+    <div class="col-3">
+      <select class="custom-select" [(ngModel)]="pageSize">
+        <option [ngValue]="6">6 images par page</option>
+        <option [ngValue]="9">9 images par page</option>
+        <option [ngValue]="12">12 images par page</option>
+        <option [ngValue]="15">15 images par page</option>
+      </select>
+    </div>
+  </div>
+</section>

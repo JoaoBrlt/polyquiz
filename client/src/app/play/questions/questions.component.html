@@ -1,0 +1,47 @@
+<div [ngClass]="getProfileClasses()" class="question">
+  <div class="header row">
+    <div class="col">
+      <h2 class="title">
+        {{ question.label }}
+      </h2>
+      <img
+        *ngIf="question.imageId"
+        src="{{ getImage(question.imageId).path }}"
+        alt="{{ getImage(question.imageId).name }}"
+        class="question-image"/>
+    </div>
+  </div>
+  <div [ngClass]="getAnswersClasses()" class="answers row">
+    <div
+      *ngFor="let answer of question.answers; let i = index"
+      class="col-12 col-md-6 answer">
+      <button
+        *ngIf="forAnimation2[i] === false;"
+        (click)="checkAnswer(answer)"
+        [@isAnswerCorrect]="forAnimation[i]"
+        (@isAnswerCorrect.done)="validateAnswer(i, $event)"
+        class="btn btn-lg btn-white answer-button">
+        <img
+          *ngIf="answer.imageId"
+          src="{{ getImage(answer.imageId).path}}"
+          alt="{{ getImage(answer.imageId).name }}"
+          class="answer-image"/>
+        <br *ngIf="answer.imageId"/>
+        {{answer.value}}
+      </button>
+      <div class="answer-wrong" *ngIf="forAnimation2[i] === true;">
+        <span>Ce n'était pas la bonne réponse</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer row">
+    <div class="col">
+      <button
+        *ngIf="enableSkip"
+        (click)="skipQuestion()"
+        class="btn btn-lg btn-white skip-button">
+        Passer à la question suivante
+      </button>
+    </div>
+  </div>
+</div>

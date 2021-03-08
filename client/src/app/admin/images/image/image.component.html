@@ -1,0 +1,22 @@
+<div (click)="edit($event)" title="Modifier" class="card image-card" >
+  <img src="{{ image.path }}" class="card-img-top" alt="{{ image.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ image.name }}</h5>
+    <button
+      type="button"
+      title="Modifier"
+      (click)="edit($event)"
+      class="btn btn-success image-button">
+      <fa-icon [icon]="editIcon"></fa-icon>
+      Modifier
+    </button>
+    <button
+      type="button"
+      title="Supprimer"
+      (click)="delete($event)"
+      class="btn btn-danger image-button">
+      <fa-icon [icon]="deleteIcon"></fa-icon>
+      Supprimer
+    </button>
+  </div>
+</div>

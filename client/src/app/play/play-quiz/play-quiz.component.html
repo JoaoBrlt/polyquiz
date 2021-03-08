@@ -1,0 +1,44 @@
+<section [ngClass]="getProfileClasses()" class="quiz">
+  <div class="progress">
+    <div
+      class="progress-bar bg-success"
+      role="progressbar"
+      [style.width]="progressPercent + '%'"
+      aria-valuemin="0"
+      aria-valuemax="100">
+      {{ progressPercent }}%
+    </div>
+  </div>
+  <app-question-to-answer
+    *ngIf="isQuestionVisible"
+    class="question"
+    [@inAndOut]="isQuestionVisible"
+    (@inAndOut.done)="makeAnswerAppear()"
+    [question]="ongoingQuestion"
+    (goToNextQuestion)="goToNextQuestion($event)">
+  </app-question-to-answer>
+  <div
+    *ngIf="isAnswerVisible"
+    class="quiz-answer"
+    [@inAndOut]="isAnswerVisible"
+    (@inAndOut.done)="makeQuestionAppear()">
+    La bonne réponse était :
+    <br>
+    <img
+      *ngIf="correctAnswer.imageId"
+      src="{{ getImage(correctAnswer.imageId).path}}"
+      alt="{{ getImage(correctAnswer.imageId).name }}"
+      class="answer-image"/>
+    <br *ngIf="correctAnswer.imageId"/>
+    {{ correctAnswer.value }}
+  </div>
+  <div
+    *ngIf="hasEnded"
+    class="quiz-ending">
+    Bravo {{guestName}}<br>
+    Le quiz est désormais terminé!<br>
+    <button (click)="backToTheme()" class="btn btn-lg btn-white restart-button">
+      Cliquez ici pour revenir à la sélection d'un thème
+    </button>
+  </div>
+</section>
