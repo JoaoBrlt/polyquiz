@@ -1,0 +1,61 @@
+version: '3'
+
+services:
+  # Database.
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_DB: polyquiz_database
+      POSTGRES_USER: polyquiz_user
+      POSTGRES_PASSWORD: polyquiz_password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - polyquiz-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U polyquiz_user -d polyquiz_database"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Server.
+  server:
+    build: ./server
+    container_name: server
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+    - "3000:3000"
+    networks:
+      - polyquiz-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # Client.
+  client:
+    build: ./client
+    container_name: client
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "4200:4200"
+    networks:
+      - polyquiz-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      server:
+        condition: service_started
+
+volumes:
+  postgres-data:
+
+networks:
+  polyquiz-network:
+    driver: bridge
