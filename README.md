@@ -1,10 +1,10 @@
 # PolyQuiz
 
-**Course :** Sixth Semester Project
+**Course:** Sixth Semester Project
 
-**Supervisors :** A.-M. Dery, R. Pourtier, M. Cousté, N. Stadler, C. Brel, G. Casagrande
+**Supervisors:** A.-M. Dery, R. Pourtier, M. Cousté, N. Stadler, C. Brel, G. Casagrande
 
-**Date :** March 2020 - May 2020
+**Date:** March 2020 - May 2020
 
 ## Description
 
